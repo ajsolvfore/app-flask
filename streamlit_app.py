@@ -13,14 +13,14 @@ password = st.text_input("Password", type="password")
 
 if st.button("Login"):
     login_data = {"email": email, "password": password}
-    
     try:
-        # Send POST request to Flask API for login
         response = requests.post(f"{API_BASE_URL}/auth/token", json=login_data)
+        st.write(f"Response Status Code: {response.status_code}")  # Debug statement
+        st.write(f"Response Text: {response.text}")  # Debug statement
         if response.status_code == 200:
             token_data = response.json()
             st.success(f"Logged in! Access Token: {token_data['access_token']}")
-            st.session_state.access_token = token_data['access_token']  # Save the token
+            st.session_state.access_token = token_data['access_token']
         else:
             st.error("Login failed!")
     except Exception as e:
