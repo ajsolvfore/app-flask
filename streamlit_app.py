@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Flask API URL (update with your actual deployed API URL)
-API_BASE_URL = "http://127.0.0.1:5000"  # Change this to your deployed Flask API URL
+API_BASE_URL = "https://app-flask-qlkhouuzfgemcgdrgc4dfb.streamlit.app/"  # Change this to your deployed Flask API URL
 
 st.title("User Management App")
 
